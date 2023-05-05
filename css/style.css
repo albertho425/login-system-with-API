@@ -1,0 +1,144 @@
+
+body, html {   
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display:table;
+    background: #d5dbdb;
+    
+}
+body {
+    display:table-cell;
+    vertical-align:middle;
+}
+form {
+    display:table;/* shrinks to fit content */
+    margin:auto;
+}
+
+.login-form {
+
+    
+    margin: 50px auto;
+    font-size: 15px;
+  }
+
+  @media screen and (min-width: 300px) {
+    .login-form form {
+      width: 325px !important;
+    }
+  }
+  
+  @media screen and (min-width: 350px) {
+    .login-form form {
+      width: 375px !important;
+    }
+  }
+
+  @media screen and (min-width: 400px) {
+    .login-form form {
+      width: 400px !important;
+    }
+  }
+
+  @media screen and (min-width: 800px) {
+    .login-form form {
+      width: 450px !important;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    .login-form form {
+      width: 500px !important;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    .login-form form {
+      width: 550px !important;
+    }
+  }
+  .login-form form {
+    margin-bottom: 15px;
+    background: #fff;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 32px 48px;
+    border: 1px solid #ddd;
+  }
+
+  .login-form h2 {
+    color: #636363;
+    margin: 0 0 15px;
+    position: relative;
+    text-align: center;
+  }
+
+  .login-form h2:before,
+  .login-form h2:after {
+    content: "";
+    height: 2px;
+    width: 30%;
+    background: #d4d4d4;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+  }
+
+  .login-form h2:before {
+    left: 0;
+  }
+
+  .login-form h2:after {
+    right: 0;
+  }
+
+  .login-form .hint-text {
+    color: #999;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  .login-form a:hover {
+    text-decoration: none;
+  }
+
+  .form-control,
+  .btn {
+    min-height: 38px;
+    border-radius: 2px;
+  }
+
+  .btn {
+    font-size: 15px;
+    font-weight: bold;
+  } 
+  
+  .form-icon {
+    width: 50px !important;
+  }
+
+   .form-margin-top {
+    margin-top: 20px;
+  }
+
+  .btn-dashboard {
+    width: 25%;
+  }
+
+  .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited{
+    background-color: #8064A2 !important;
+    border: #8064A2 !important;
+    font-weight: normal;
+}
+
+.btn-warning, .btn-warning:hover, .btn-warning:active, .btn-warning:visited{
+  background-color:  #bfc9ca  !important;
+  border: #bfc9ca  !important;
+  font-weight: normal;
+}
+
+.signup-icon {
+  width: 50px;
+  padding: 5px;
+}

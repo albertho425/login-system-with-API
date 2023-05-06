@@ -172,8 +172,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Edit Profile</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
@@ -185,14 +186,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <div class="form-group">    
             <h3 class="text-center">Edit Profile</h3>
             <div class="col text-center"><br>
-                <a href="login.php"><img class="form-icon" src="icons/edit.png"/></a>
-            </div><br>
+                <img class="signup-icon" src="images/login.png"/>
+            </div>
         </div>    
         
         <div class="row">
             <div class="col">
                 <div class="form-group">
-                    <label class="form-margin-top">Edit First Name</label>
+                    <label class="form-margin-top"></label>
                     <input type="text" name="new_firstname" class="form-control <?php echo (!empty($new_firstname_err)) ? 'is-invalid' : ''?>" value="<?php echo $firstname; ?>">
                     <span class="invalid-feedback"><?php echo $new_firstname_err?></span>
                     <span><?php echo $new_firstname;?></span>
@@ -200,7 +201,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="col">
                 <div class="form-group">
-                    <label class="form-margin-top">Edit Last Name</label>
+                    <label class="form-margin-top"></label>
                     <input type="text" name="new_lastname" class="form-control <?php echo (!empty($new_lastname_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $lastname ?>">
                     <span class="invalid-feedback"><?php echo $new_lastname_err; ?></span>
                     <span><?php echo $new_lastname;?></span>
@@ -208,34 +209,54 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
         </div>
         <div class="form-group">
-            <label class="form-margin-top">Email</label>
+            <label class="form-margin-top"></label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                </div>
             <input type="email" name="new_email" class="form-control <?php echo (!empty($new_email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email ?>">
             <span class="invalid-feedback"><?php echo $new_email_err; ?></span>
             <span><?php echo $new_email;?></span>
-        </div>
+        </div></div>
         <div class="form-group">
-            <label class="form-margin-top">Username</label>
+            <label class="form-margin-top"></label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <div class="input-group-text"><i class="bi bi-person-circle"></i></i></div>
+                </div>    
             <input type="text" name="new_username" class="form-control <?php echo (!empty($new_username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username ?>">
             <span class="invalid-feedback"><?php echo $new_username_err; ?></span>
             <span><?php echo $new_username;?></span>
-        </div>
+        </div></div>
         
         <div class="form-group">
-            <label class="form-margin-top">New Password</label>
-            <input type="password" name="new_password" class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>">
+            <label class="form-margin-top"></label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                </div>
+            <input type="password" name="new_password" class="form-control <?php echo (!empty($new_password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $new_password; ?>" placeholder="New password">
             <span class="invalid-feedback"><?php echo $new_password_err; ?></span>
             <span><?php echo $new_password;?></span>
-        </div>
+        </div></div>
         <div class="form-group">
-            <label class="form-margin-top">Confirm Password</label>
-            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>">
+            <label class="form-margin-top"></label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                </div>
+            <input type="password" name="confirm_password" class="form-control <?php echo (!empty($confirm_password_err)) ? 'is-invalid' : ''; ?>" placeholder="Confirm Password">
             <span class="invalid-feedback"><?php echo $confirm_password_err; ?></span>
             <span><?php echo $confirm_password;?></span>
-        </div>
+        </div></div>
         <div class="form-group">
             <label class="form-margin-top">Member since</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <div class="input-group-text"><i class="bi bi-calendar-check"></i></div>
+                </div>
             <input type="text" name="" class="form-control" value="<?php echo $date ?>" disabled readonly>
-        </div>
+        </div></div>
         
         <div class="col text-center pt-1">
               <div class="d-grid gap-1 p-1">
@@ -246,5 +267,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </form>
     </div>
 </div>
+<script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
 </body>
 </html>

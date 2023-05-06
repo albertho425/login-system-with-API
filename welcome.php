@@ -43,7 +43,6 @@ $result = mysqli_query($conn, $sql);
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
-    <h2 class="">Hello <b><?php echo ucfirst(htmlspecialchars($_SESSION["username"])); ?></b></h2>
 
 
         <div class="login-form" style="margin-top:0";>
@@ -77,6 +76,8 @@ $result = mysqli_query($conn, $sql);
                             echo '<tr><td><p class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></tr></td>';
                             
                             echo '<tr><td><p class="card-text">Location </td><td><span class="" id="location"></span></tr></td>';
+
+                            echo '<tr><td><p class="card-text">Country</td><td><span class="" id="country"></span></tr></td>';
 
                             echo '<tr><td><p class="card-text">Time Zone </td><td><span class="" id="timezone"></span></tr></td>';
 

@@ -8,6 +8,7 @@ const key2 = "CCFMH7s4SxEi70LHvuK6TqEeX5Sf75coHdYMFfA";
 let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
 let locationText = document.getElementById("location");
+let countryText = document.getElementById("country");
 let dateTimeText = document.getElementById("dateTime");
 let longText = document.getElementById("longitude");
 let latText = document.getElementById("latitude");
@@ -40,17 +41,20 @@ async function getData() {
             let theIpAddress = result["data"].ip;
             let theTimeZone = result["data"].timezone.code;
             let theLocation = result["data"].timezone.id;
+            let theCountry = result["data"].location.country.emoji;
             let theDateTime = result["data"].timezone.current_time;
             let theLongitude = result["data"].location.longitude;
             let theLatitude = result["data"].location.latitude;
             
             console.log(theLongitude);
             console.log(theLatitude);
+            console.log("country is " + theCountry);
 
             outputIpAddress(theIpAddress);
             outputTimeZone(theTimeZone);
             outputLocation(theLocation);
             outputDateTime(theDateTime);
+            outputCountry(theCountry);
             
             getWeatherData(theLatitude,theLongitude);
         }
@@ -127,4 +131,10 @@ async function getWeatherData(lat,long) {
     function outputWeather(weatherInput)
     {
         weatherText.innerHTML = weatherInput;
+    }
+
+    //Output the country
+    function outputCountry(countryInput)
+    {
+        countryText.innerHTML = countryInput;
     }

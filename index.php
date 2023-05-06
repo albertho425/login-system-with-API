@@ -130,6 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
      
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="css/style.css">     
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="d-flex flex-column min-vh-100 justify-content-center align-items-center">
@@ -141,26 +142,34 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         ?>
         <form class="validate-form" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" novalidate>
             <div class="form-group">
-                <h3 class="text-center">Login System</h3>                
+                <h5 class="text-center">Login System with API</h5>                
                 <div class="col text-center"><br>
-                    <a href="index.php"><img class="form-icon" src="icons/user.png"/></a>
+                    <a href="index.php"><img class="signup-icon" src="images/login.png"/></a>
                 </div><br>
             </div>  
              
             <div class="form-group">  
-                <label class="form-margin-top">Username</label>
-
-                <input class="form-control" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>" required>
-                <div class="valid-feedback text-end"></div>
-                <div class="invalid-feedback text-end">Username field cannot be blank</div>            
+                <label class="form-margin-top"></label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <div class="input-group-text"><i class="bi bi-person-circle"></i></i></div>
+                    </div>
+                    <input class="form-control" type="text" name="username" placeholder="Username" value="<?php echo $username; ?>" required>
+                    <div class="valid-feedback text-end"></div>
+                    <div class="invalid-feedback text-end">Username field cannot be blank</div>            
+                </div>
             </div>
             <div class="form-group">
-                <label class="form-margin-top">Password</label>
-                <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
-                <div class="valid-feedback text-end"></div>
-              <div class="invalid-feedback text-end">Password field cannot be blank</div>
+                <label class="form-margin-top"></label>
+                <div class="input-group">
+                    <div class="input-group-addon">
+                        <div class="input-group-text"><i class="bi bi-lock-fill"></i></div>
+                    </div>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" required>
+                    <div class="valid-feedback text-end"></div>
+                    <div class="invalid-feedback text-end">Password field cannot be blank</div>
+                 </div>
             </div>
-
             <div class="col text-center">
               <div class="d-grid gap-1 p-1">
                   <input type="submit" class="btn btn-primary form-margin-top" value="Login">
@@ -177,10 +186,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   class="signup-icon" /></a>
                   <a href="home.php"><img src="images/google.png"
                   class="signup-icon" /></a>
-                <a href="#"><img src="images/linkedin.png"
-                  class="signup-icon" /></a>
-                  <a href="#"><img
-                  src="images/twitter.png" class="signup-icon" /></a>
+                
             </div>
           </div>
           <div class="col text-center p-1">

@@ -85,6 +85,9 @@ $result = mysqli_query($conn, $sql);
                             echo '<tr><td><p class="card-text">Time Zone </td><td><span class="" id="timezone"></span></tr></td>';
                             //Current weather condition
                             echo '<tr><td><p class="card-text">Current Conditions </td><td><span class="" id="condition"></span></tr></td>';
+                            //Weather icon
+                            echo '<tr><td><p class="card-text">Weather icon </td><td><span class="" id="weatherIcon"></span></tr></td>';
+
                             //Current temperature based on IP
                             echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td></table>';
 

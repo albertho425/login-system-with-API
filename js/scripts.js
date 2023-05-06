@@ -15,6 +15,7 @@ let longText = document.getElementById("longitude");
 let latText = document.getElementById("latitude");
 let weatherText = document.getElementById("weather");
 let conditionText = document.getElementById("condition");
+let weatherIconText = document.getElementById("weatherIcon");
 
 
 // When the page loads, run these functions
@@ -47,6 +48,7 @@ async function getData() {
             let theDateTime = result["data"].timezone.current_time;
             let theLongitude = result["data"].location.longitude;
             let theLatitude = result["data"].location.latitude;
+            
             
             console.log(theLongitude);
             console.log(theLatitude);
@@ -90,12 +92,11 @@ async function getWeatherData(lat,long) {
             let theWeather = weatherResult.main.temp;
             let condtion = weatherResult.weather[0].main;
             let condtionDescription = weatherResult.weather[0].description;
+            let theWeatherIcon = weatherResult.weather[0].icon;
 
-            console.log(theWeather);
-            console.log(condtion);
-            console.log(condtionDescription);
             outputWeather(theWeather);
             outPutWeatherConditions(condtionDescription);
+            outputWeatherIcon(theWeatherIcon);
         }
 
     } catch (error) {
@@ -163,4 +164,16 @@ async function getWeatherData(lat,long) {
     function outPutWeatherConditions(condtionsInput) {
 
         conditionText.innerHTML = condtionsInput;
+    }
+
+    //Output the weather icon
+
+
+    function outputWeatherIcon(weatherInconInput)
+
+    {
+        let theIconCode = weatherInconInput;
+        
+        weatherIconText.innerHTML = "<img src='http://openweathermap.org/img/w/" + theIconCode +  ".png'>";
+
     }

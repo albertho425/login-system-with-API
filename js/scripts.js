@@ -1,7 +1,8 @@
 //Declare constants and variables
 
 weatherAPIKey = "b2ab7ba8839f62d072e8fb6510491325";
-clockAPIKey = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
+// clockAPIKey = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
+clockAPIKey = "DaSuash1fkGkipLCCIvIzSulDjDPXNF1CNyh1anC";
 const key1  = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
 const key2 = "CCFMH7s4SxEi70LHvuK6TqEeX5Sf75coHdYMFfA";
 
@@ -9,10 +10,11 @@ let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
 let locationText = document.getElementById("location");
 let countryText = document.getElementById("country");
-let dateTimeText = document.getElementById("dateTime");
+// let dateTimeText = document.getElementById("dateTime");
 let longText = document.getElementById("longitude");
 let latText = document.getElementById("latitude");
 let weatherText = document.getElementById("weather");
+let conditionText = document.getElementById("condition");
 
 
 // When the page loads, run these functions
@@ -53,7 +55,7 @@ async function getData() {
             outputIpAddress(theIpAddress);
             outputTimeZone(theTimeZone);
             outputLocation(theLocation);
-            outputDateTime(theDateTime);
+            // outputDateTime(theDateTime);
             outputCountry(theCountry);
             
             getWeatherData(theLatitude,theLongitude);
@@ -86,9 +88,14 @@ async function getWeatherData(lat,long) {
             console.log("the API result is: " , weatherResult);
 
             let theWeather = weatherResult.main.temp;
+            let condtion = weatherResult.weather[0].main;
+            let condtionDescription = weatherResult.weather[0].description;
 
             console.log(theWeather);
+            console.log(condtion);
+            console.log(condtionDescription);
             outputWeather(theWeather);
+            outPutWeatherConditions(condtionDescription);
         }
 
     } catch (error) {
@@ -101,7 +108,9 @@ async function getWeatherData(lat,long) {
 
 
 
-//Output data to the screen
+
+
+// Functions for output or logic
 
     
     //Output the IP address
@@ -127,14 +136,31 @@ async function getWeatherData(lat,long) {
         dateTimeText.innerHTML = dateTimeInput;
     }
 
-    //Output the weather
+    //Output the weather in C and F units
     function outputWeather(weatherInput)
     {
-        weatherText.innerHTML = weatherInput;
+        let tempF = Math.trunc(convertTemp(weatherInput));
+        weatherText.innerHTML = Math.trunc(weatherInput) + " C " + " / " + tempF + " F "
     }
 
     //Output the country
     function outputCountry(countryInput)
     {
         countryText.innerHTML = countryInput;
+    }
+
+    //Convert temperature from C to F
+    function convertTemp(tempInput) {
+
+        let tempNumber = Number(tempInput);
+        let tempResult = (tempNumber * 9/5) + 32
+        console.log("Converted temp in F is: " + tempResult);
+        return tempResult;
+    }
+
+    //Output the current conditions
+
+    function outPutWeatherConditions(condtionsInput) {
+
+        conditionText.innerHTML = condtionsInput;
     }

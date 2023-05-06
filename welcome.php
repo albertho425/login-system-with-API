@@ -72,7 +72,7 @@ $result = mysqli_query($conn, $sql);
                             echo '<tr><td><p class="card-text">Location </td><td><span class="" id="location"></span></tr></td>';
                             echo '<tr><td><p class="card-text">Country</td><td><span class="" id="country"></span></tr></td>';
                             echo '<tr><td><p class="card-text">Time Zone </td><td><span class="" id="timezone"></span></tr></td>';
-                            echo '<tr><td><p class="card-text">Current Time </td><td><span class="" id="dateTime"></span></tr></td>';
+                            echo '<tr><td><p class="card-text">Current Conditions </td><td><span class="" id="condition"></span></tr></td>';
                             echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td></table>';
 
                             echo '<div class="col text-center">

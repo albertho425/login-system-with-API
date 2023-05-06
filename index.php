@@ -70,23 +70,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
                             // time zone is hard coded to PST
                             // date_default_timezone_set("America/Vancouver");
-                            // $param_lastupdate = date('y-m-d h:i:s');
+                            $param_lastupdate = date('y-m-d h:i:s');
                             // echo $param_lastupdate;
 
-                            // $sql = "UPDATE loginusers SET lastlogin = ? WHERE id = ?";
+                            $sql = "UPDATE loginusers SET lastlogin = ? WHERE id = ?";
                             
                                                         
                             if($stmt = $mysqli->prepare($sql)){
                                 // Bind variables to the prepared statement as parameters
                                 // sssi stands for string and integer
-                                // $stmt->bind_param("si", $param_lastlogin, $param_id);
-                                $stmt->bind_param("s", $param_id);
+                                $stmt->bind_param("si", $param_lastlogin, $param_id);
+                                // $stmt->bind_param("s", $param_id);
                             
 
                                 // Set parameters
                                 
                                 // time zone is hard coded to PST
-                                date_default_timezone_set("America/Vancouver");
+                                // date_default_timezone_set("America/Vancouver");
                                 $param_lastupdate = date('y-m-d h:i:s');
                                 $param_id = $_SESSION["id"];
                                 

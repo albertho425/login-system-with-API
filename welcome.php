@@ -62,16 +62,15 @@ $result = mysqli_query($conn, $sql);
 
                                 "<tr><td>" . "ID: " . "</td>" . "<td>" . $row["id"]. "</td></tr>" . 
 
-                                "<tr><td>" . "First Name: " . "</td>" . "<td>" . $row["firstname"]. "</td></tr>" . 
-
-                                "<tr><td>" . "Last Name: " .  "</td>" . "<td>" . $row["lastname"]. "</td></tr>" . 
+                                "<tr><td>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] . "</td></tr>" .       
 
                                 "<tr><td>" . "User Name: " .  "</td>" . "<td>" . $row["username"] . "</td></tr>" . 
 
                                 "<tr><td>" . "Email: " .  "</td>" . "<td>" . $row["email"] . "</td></tr>" . 
 
-                                "<tr><td>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>";
+                                "<tr><td>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>" .
                                 
+                                "<tr><td>" . "Logins: " .  "</td>" . "<td>" . $row["logins"] . "</td></tr>" ; 
 
                             echo '<tr><td><p class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></tr></td>';
                             

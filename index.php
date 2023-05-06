@@ -171,6 +171,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             <div class="col text-center">
               <div class="login-row form-nav-row p-3">
                 <p>Or sign up with:</p>
+                <a href="#"><img src="images/apple.png"
+                  class="signup-icon" /></a>
                 <a href="#"><img src="images/facebook.png"
                   class="signup-icon" /></a>
                   <a href="home.php"><img src="images/google.png"

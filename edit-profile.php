@@ -23,7 +23,7 @@ if(isset($_GET["id"]) && !empty(trim($_GET["id"]))){
     $id =  trim($_GET["id"]);
     
     // Prepare a select statement
-    $sql = "SELECT * FROM users WHERE id = ?";
+    $sql = "SELECT * FROM loginusers WHERE id = ?";
     if($stmt = $mysqli->prepare($sql)){
         // Bind variables to the prepared statement as parameters
         $stmt->bind_param("i", $param_id);
@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_lastname_err) && empty($new_firstname_err) && empty($new_password_err) && empty($confirm_password_err) && empty($new_username_err) && empty($new_email_err) ){
         // Prepare an update statement
-        $sql = "UPDATE users SET firstname=?, lastname=?, email=?, username=?, password = ? WHERE id = ?";
+        $sql = "UPDATE loginusers SET firstname=?, lastname=?, email=?, username=?, password = ? WHERE id = ?";
         echo "No errors";
         
         

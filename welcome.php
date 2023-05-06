@@ -16,12 +16,12 @@ require_once "config.php";
 
 <?php
 // Create connection
-$conn = mysqli_connect("localhost", "root", "root", "users");
+$conn = mysqli_connect("localhost", "root", "root", "maplesyrupweb");
 // Check connection
 if (!$conn) {
   die("Connection failed: " . mysqli_connect_error());
 }
-$sql = "SELECT * FROM users WHERE username = '".$_SESSION['username']."'";
+$sql = "SELECT * FROM loginusers WHERE username = '".$_SESSION['username']."'";
 $result = mysqli_query($conn, $sql);
 
   

@@ -61,29 +61,19 @@ $result = mysqli_query($conn, $sql);
                         echo
 
                                 "<tr><td>" . "ID: " . "</td>" . "<td>" . $row["id"]. "</td></tr>" . 
-
-                                "<tr><td>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] . "</td></tr>" .       
-
+                                "<tr><td>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] 
+                                . "</td></tr>" .       
                                 "<tr><td>" . "User Name: " .  "</td>" . "<td>" . $row["username"] . "</td></tr>" . 
-
                                 "<tr><td>" . "Email: " .  "</td>" . "<td>" . $row["email"] . "</td></tr>" . 
-
                                 "<tr><td>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>" .
-                                
-                                "<tr><td>" . "Logins: " .  "</td>" . "<td>" . $row["logins"] . "</td></tr>" ; 
+                                "<tr><td>" . "Last Login: " .  "</td>" . "<td>" . $row["lastlogin"] . "</td></tr>" ; 
 
                             echo '<tr><td><p class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></tr></td>';
-                            
                             echo '<tr><td><p class="card-text">Location </td><td><span class="" id="location"></span></tr></td>';
-
                             echo '<tr><td><p class="card-text">Country</td><td><span class="" id="country"></span></tr></td>';
-
                             echo '<tr><td><p class="card-text">Time Zone </td><td><span class="" id="timezone"></span></tr></td>';
-
                             echo '<tr><td><p class="card-text">Current Time </td><td><span class="" id="dateTime"></span></tr></td>';
-
-                            echo '<tr><td><p class="card-text">Weather (Celcius) </td><td><span class="" id="weather"></span></tr></td></table>';
-
+                            echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td></table>';
 
                             echo '<div class="col text-center">
                                   <div class="d-grid gap-1 p-1">';

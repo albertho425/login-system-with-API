@@ -5,6 +5,7 @@ weatherAPIKey = "b2ab7ba8839f62d072e8fb6510491325";
 clockAPIKey = "DaSuash1fkGkipLCCIvIzSulDjDPXNF1CNyh1anC";
 const key1  = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
 const key2 = "CCFMH7s4SxEi70LHvuK6TqEeX5Sf75coHdYMFfA";
+currencyAPIKey = "6UGvcEOcu5uJ5WMCL0v0kBLyCRFyu5jP";
 
 let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
@@ -51,8 +52,11 @@ async function getData() {
             outputIpAddress(theIpAddress);
             outputTimeZone(theTimeZone);
             outputCountry(theCountry);
+            // let theCurrency = getCurrency(theIpAddress);
+            // console.log("the returned value of currency is: " + theCurrency);
             
             getWeatherData(theLatitude,theLongitude);
+            getCurrencyData(theIpAddress);
         }
 
     } catch (error) {
@@ -101,6 +105,57 @@ async function getWeatherData(lat,long) {
 }
 
 
+async function getCurrencyData(ipAdressInput) {
+    const currencyURL = "https://ipapi.co/" + ipAdressInput + "/json/";
+
+    try {
+        const currencyReponse = await fetch(currencyURL, {cache: "no-cache"});
+        const currencyResult = await currencyReponse.json();
+        
+
+
+        if (currencyReponse.ok) {
+            console.log("the Currency API result is: " , currencyResult);
+
+            let tempCurrency = currencyResult.currency;
+            let exchangeRate = getExchangeRate(tempCurrency);
+            console.log("Exchange Rate is: " + exchangeRate);
+            
+        }
+
+    } catch (error) {
+        if (error) throw error;
+        console.log("Currency API error: ", error);
+    
+    }
+}
+
+async function getExchangeRate(currencyInput) {
+    const currencyURL = "https://api.apilayer.com/exchangerates_data/convert?to=USD&from=" + currencyInput + "&amount=1&apikey=" +  currencyAPIKey;
+
+    try {
+        const currencyReponse = await fetch(currencyURL, {cache: "no-cache"});
+        const currencyResult = await currencyReponse.json();
+        
+
+
+        if (currencyReponse.ok) {
+            console.log("the Exchange Rate from API is: " , currencyResult);
+
+            // let tempCurrency = currencyResult.currency;
+            // console.log("already converted here: " + tempCurrency);
+            // let result = getCurrency(tempCurrency);            
+            // console.log (result);
+
+            
+        }
+
+    } catch (error) {
+        if (error) throw error;
+        console.log("Exchange API error: ", error);
+    
+    }
+}
 
 
 
@@ -172,3 +227,5 @@ async function getWeatherData(lat,long) {
 
         cityText.innerHTML = cityInput;
     }
+
+    

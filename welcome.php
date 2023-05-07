@@ -87,9 +87,11 @@ $result = mysqli_query($conn, $sql);
                             echo '<tr><td><p class="card-text">Current Conditions </td><td><span class="" id="condition"></span></tr></td>';
                             //Weather icon
                             echo '<tr><td><p class="card-text">Weather icon </td><td><span class="" id="weatherIcon"></span></tr></td>';
-
                             //Current temperature based on IP
-                            echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td></table>';
+                            echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td>';
+                            //Currency Exchange Rate (1 USD to your location)
+                            echo '<tr><td><p class="card-text">Exchange Rate</td><td><span class="" id="exchangeRate"></span></tr></td></table>';
+
 
                             echo '<div class="col text-center">
                                   <div class="d-grid gap-1 p-1">';

@@ -16,6 +16,7 @@ let weatherText = document.getElementById("weather");
 let conditionText = document.getElementById("condition");
 let weatherIconText = document.getElementById("weatherIcon");
 let cityText = document.getElementById("city");
+let exchangeRateText = document.getElementById("exchangeRate");
 
 
 // When the page loads, run these functions
@@ -104,6 +105,10 @@ async function getWeatherData(lat,long) {
     }
 }
 
+/**
+ * Get the currency based on IP address
+ * @param {*} ipAdressInput 
+ */
 
 async function getCurrencyData(ipAdressInput) {
     const currencyURL = "https://ipapi.co/" + ipAdressInput + "/json/";
@@ -130,6 +135,11 @@ async function getCurrencyData(ipAdressInput) {
     }
 }
 
+/**
+ * Get the exchange rate from USD to user's local currency
+ * @param {*} currencyInput 
+ */
+
 async function getExchangeRate(currencyInput) {
     const currencyURL = "https://api.apilayer.com/exchangerates_data/convert?to=USD&from=" + currencyInput + "&amount=1&apikey=" +  currencyAPIKey;
 
@@ -142,11 +152,10 @@ async function getExchangeRate(currencyInput) {
         if (currencyReponse.ok) {
             console.log("the Exchange Rate from API is: " , currencyResult);
 
-            // let tempCurrency = currencyResult.currency;
-            // console.log("already converted here: " + tempCurrency);
-            // let result = getCurrency(tempCurrency);            
-            // console.log (result);
+            let exchangeValue = (currencyResult.result).toFixed(2);
+            let finalResult = exchangeValue + " " + currencyResult.query.from;
 
+            outputExchangeRate(finalResult);
             
         }
 
@@ -228,4 +237,9 @@ async function getExchangeRate(currencyInput) {
         cityText.innerHTML = cityInput;
     }
 
-    
+    //Output the exchange rate
+
+    function outputExchangeRate(currencyInput) {
+
+        exchangeRateText.innerHTML = currencyInput;
+    }

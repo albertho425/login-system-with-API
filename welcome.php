@@ -78,7 +78,7 @@ $result = mysqli_query($conn, $sql);
                             //IP
                             echo '<tr><td><p class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></tr></td>';
                             //Location
-                            echo '<tr><td><p class="card-text">Location </td><td><span class="" id="location"></span></tr></td>';
+                            echo '<tr><td><p class="card-text">City </td><td><span class="" id="city"></span></tr></td>';
                             //Country emoji
                             echo '<tr><td><p class="card-text">Country</td><td><span class="" id="country"></span></tr></td>';
                             //Time zone

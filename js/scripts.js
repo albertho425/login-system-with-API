@@ -8,14 +8,13 @@ const key2 = "CCFMH7s4SxEi70LHvuK6TqEeX5Sf75coHdYMFfA";
 
 let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
-let locationText = document.getElementById("location");
 let countryText = document.getElementById("country");
-// let dateTimeText = document.getElementById("dateTime");
 let longText = document.getElementById("longitude");
 let latText = document.getElementById("latitude");
 let weatherText = document.getElementById("weather");
 let conditionText = document.getElementById("condition");
 let weatherIconText = document.getElementById("weatherIcon");
+let cityText = document.getElementById("city");
 
 
 // When the page loads, run these functions
@@ -43,21 +42,14 @@ async function getData() {
 
             let theIpAddress = result["data"].ip;
             let theTimeZone = result["data"].timezone.code;
-            let theLocation = result["data"].timezone.id;
+            // let theLocation = result["data"].timezone.id;
             let theCountry = result["data"].location.country.emoji;
             let theDateTime = result["data"].timezone.current_time;
             let theLongitude = result["data"].location.longitude;
             let theLatitude = result["data"].location.latitude;
             
-            
-            console.log(theLongitude);
-            console.log(theLatitude);
-            console.log("country is " + theCountry);
-
             outputIpAddress(theIpAddress);
             outputTimeZone(theTimeZone);
-            outputLocation(theLocation);
-            // outputDateTime(theDateTime);
             outputCountry(theCountry);
             
             getWeatherData(theLatitude,theLongitude);
@@ -93,10 +85,12 @@ async function getWeatherData(lat,long) {
             let condtion = weatherResult.weather[0].main;
             let condtionDescription = weatherResult.weather[0].description;
             let theWeatherIcon = weatherResult.weather[0].icon;
+            let theCity = weatherResult.name;
 
             outputWeather(theWeather);
             outPutWeatherConditions(condtionDescription);
             outputWeatherIcon(theWeatherIcon);
+            outputCity(theCity);
         }
 
     } catch (error) {
@@ -123,12 +117,6 @@ async function getWeatherData(lat,long) {
     function outputTimeZone(timeZoneInput)
     {
         timeZoneText.innerHTML = timeZoneInput;
-    }
-
-    //Output the location
-    function outputLocation(locationInput)
-    {
-        locationText.innerHTML = locationInput;
     }
 
     //Output the date and time
@@ -176,4 +164,11 @@ async function getWeatherData(lat,long) {
         
         weatherIconText.innerHTML = "<img src='http://openweathermap.org/img/w/" + theIconCode +  ".png'>";
 
+    }
+
+    //Output the city from weather API
+
+    function outputCity(cityInput) {
+
+        cityText.innerHTML = cityInput;
     }

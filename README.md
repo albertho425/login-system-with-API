@@ -1,16 +1,19 @@
 # Login system with API
 
-- PHP/MySQL for login
-- Edit your profile
-- Dashboard that displays the following
--- IP address
--- Country
--- Location
--- Weather temperature
--- Weather icon
--- Weather description
+* Login and logout
+* Edit your profile
+* Dashboard that displays the following
+    * Last profile edit date
+    * IP address
+    * City
+    * Country
+    * Weather temperature in F and C units
+    * Weather icon
+    * Weather description
+    * Exchange rate with USD to your country's currency based on IP
 
-<img width="1440" alt="Screenshot 2023-05-06 at 4 39 19 PM" src="https://user-images.githubusercontent.com/73809301/236650628-bd702e37-a6b3-4bdb-b16c-afb13da1e646.png">
-<img width="1440" alt="Screenshot 2023-05-06 at 4 39 50 PM" src="https://user-images.githubusercontent.com/73809301/236650626-346f2d33-3625-4a37-b670-0973290dd420.png">
-<img width="1440" alt="Screenshot 2023-05-06 at 4 40 13 PM" src="https://user-images.githubusercontent.com/73809301/236650625-58a8b329-c832-43ef-b363-78d22704ca58.png">
-<img width="1440" alt="Screenshot 2023-05-06 at 4 41 22 PM" src="https://user-images.githubusercontent.com/73809301/236650624-5b793567-7c19-4db4-b3fb-c620714d965f.png">
+<img width="1920" alt="dashboard" src="https://user-images.githubusercontent.com/73809301/236749970-4a3fab8e-226d-494b-9781-d305538c77b0.png">
+<img width="1920" alt="login" src="https://user-images.githubusercontent.com/73809301/236749974-febd4e32-71e3-4e59-8da8-14449c659762.png">
+<img width="1920" alt="signup" src="https://user-images.githubusercontent.com/73809301/236749978-3f2d8739-631b-46f4-b08c-9985ff5583bf.png">
+<img width="1920" alt="Screenshot 2023-05-07 at 11 20 37 PM" src="https://user-images.githubusercontent.com/73809301/236749979-dcf4a490-ffb6-4e61-8f1d-ae09c7d15e5b.png">
+<img width="1920" alt="edit-profile" src="https://user-images.githubusercontent.com/73809301/236749980-fad69793-1b16-48f9-aec7-880a854f4ae7.png">

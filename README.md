@@ -15,5 +15,4 @@
 <img width="1920" alt="dashboard" src="https://user-images.githubusercontent.com/73809301/236749970-4a3fab8e-226d-494b-9781-d305538c77b0.png">
 <img width="1920" alt="login" src="https://user-images.githubusercontent.com/73809301/236749974-febd4e32-71e3-4e59-8da8-14449c659762.png">
 <img width="1920" alt="signup" src="https://user-images.githubusercontent.com/73809301/236749978-3f2d8739-631b-46f4-b08c-9985ff5583bf.png">
-<img width="1920" alt="Screenshot 2023-05-07 at 11 20 37 PM" src="https://user-images.githubusercontent.com/73809301/236749979-dcf4a490-ffb6-4e61-8f1d-ae09c7d15e5b.png">
 <img width="1920" alt="edit-profile" src="https://user-images.githubusercontent.com/73809301/236749980-fad69793-1b16-48f9-aec7-880a854f4ae7.png">

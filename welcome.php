@@ -60,37 +60,37 @@ $result = mysqli_query($conn, $sql);
                             
                         echo
                                 //get data from database and output
-                                "<tr><td>" . "ID: " . "</td>" . "<td>" . $row["id"]. "</td></tr>" . 
+                                "<tr><td><i class=\"bi bi-person-bounding-box dashboard-icon-padding\"></i>" . "ID: " . "</td>" . "<td>" . $row["id"]. "</td></tr>" . 
                                 //First and last name
-                                "<tr><td>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] 
+                                "<tr><td><i class=\"bi bi-at dashboard-icon-padding\"></i>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] 
                                 . "</td></tr>" .       
                                 //Username
-                                "<tr><td>" . "User Name: " .  "</td>" . "<td>" . $row["username"] . "</td></tr>" . 
+                                "<tr><td><i class=\"bi bi-at dashboard-icon-padding\"></i>" . "User Name: " .  "</td>" . "<td>" . $row["username"] . "</td></tr>" . 
                                 //Email
-                                "<tr><td>" . "Email: " .  "</td>" . "<td>" . $row["email"] . "</td></tr>" . 
+                                "<tr><td><i class=\"bi bi-envelope dashboard-icon-padding\"></i>" . "Email: " .  "</td>" . "<td>" . $row["email"] . "</td></tr>" . 
                                 //Member since
-                                "<tr><td>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>" .
+                                "<tr><td><i class=\"bi bi-calendar-check dashboard-icon-padding\"></i>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>" .
                                 //Last login
-                                "<tr><td>" . "Last Login: " .  "</td>" . "<td>" . $row["lastlogin"] . "</td></tr>" ; 
+                                "<tr><td><i class=\"bi bi-calendar-check dashboard-icon-padding\"></i>" . "Last Login: " .  "</td>" . "<td>" . $row["lastlogin"] . "</td></tr>" ; 
 
                             //Output data from API
 
                             //IP
-                            echo '<tr><td><p class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-geo-alt-fill dashboard-icon-padding"></i><span class="card-text">IP Address </td><td><span class="" id="ipaddress"></span></span</tr></td>';
                             //Location
-                            echo '<tr><td><p class="card-text">City </td><td><span class="" id="city"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-geo-alt-fill dashboard-icon-padding"></i><span class="card-text">City </td><td><span class="" id="city"></span></span></tr></td>';
                             //Country emoji
-                            echo '<tr><td><p class="card-text">Country</td><td><span class="" id="country"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-geo-alt-fill dashboard-icon-padding"></i><span class="card-text">Country</td><td><span class="" id="country"></span></span></tr></td>';
                             //Time zone
-                            echo '<tr><td><p class="card-text">Time Zone </td><td><span class="" id="timezone"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-clock dashboard-icon-padding"></i><span class="card-text">Time Zone </td><td><span class="" id="timezone"></span></span></tr></td>';
                             //Current weather condition
-                            echo '<tr><td><p class="card-text">Current Conditions </td><td><span class="" id="condition"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-thermometer-half dashboard-icon-padding"></i><span class="card-text">Current Condition</td><td><span class="" id="condition"></span></span></tr></td>';
                             //Weather icon
-                            echo '<tr><td><p class="card-text">Weather icon </td><td><span class="" id="weatherIcon"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-thermometer-half dashboard-icon-padding"></i><span class="card-text">Current Condition</td><td><span class="" id="weatherIcon"></span></span></tr></td>';
                             //Current temperature based on IP
-                            echo '<tr><td><p class="card-text">Temperature </td><td><span class="" id="weather"></span></tr></td>';
+                            echo '<tr><td><i class="bi bi-thermometer-half dashboard-icon-padding"></i><span class="card-text">Temperature </td><td><span class="" id="weather"></span></span></tr></td>';
                             //Currency Exchange Rate (1 USD to your location)
-                            echo '<tr><td><p class="card-text">Exchange Rate</td><td><span class="" id="exchangeRate"></span></tr></td></table>';
+                            echo '<tr><td><i class="bi bi-currency-dollar dashboard-icon-padding"></i><span class="card-text">Exchange Rate</td><td><span class="" id="exchangeRate"></span></tr></td></table>';
 
 
                             echo '<div class="col text-center">

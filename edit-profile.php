@@ -13,7 +13,7 @@ require_once "config.php";
  
 // Define variables and initialize with empty values
 $new_firstname = $new_lastname = $new_email = $new_username = $new_password = $confirm_password = "";
-$firstname = $lastname = $username = $email = "";
+$firstname = $lastname = $username = $email = $date = "";
 $new_firstname_err = $new_lastname_err = $new_email_err = $new_username_err = $new_password_err = $confirm_password_err = "";
 
 
@@ -122,7 +122,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Check input errors before updating the database
     if(empty($new_lastname_err) && empty($new_firstname_err) && empty($new_password_err) && empty($confirm_password_err) && empty($new_username_err) && empty($new_email_err) ){
         // Prepare an update statement
-        $sql = "UPDATE loginusers SET firstname=?, lastname=?, email=?, username=?, password = ? WHERE id = ?";
+        $sql = "UPDATE loginusers SET firstname=?, lastname=?, email=?, username=?, password = ?, lastlogin = ? WHERE id = ?";
         echo "No errors";
         
         
@@ -140,12 +140,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             $param_lastname = $new_lastname;
             $param_email = $new_email;
             $param_username = $new_username;
-
-            // time zone is hard coded to PST
-            date_default_timezone_set("America/Vancouver");
-            $param_lastupdate = date('y-m-d h:i:s');
-            
-            
+            $param_lastupdate = date('y-m-d');
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){

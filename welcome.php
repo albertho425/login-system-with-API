@@ -49,17 +49,14 @@ $result = mysqli_query($conn, $sql);
                         echo
                                 //get data from database and output
                                 "<tr><td><i class=\"bi bi-at dashboard-icon-padding\"></i>" . "ID: " . "</td>" . "<td>" . $row["id"]. "</td></tr>" . 
-                                //First and last name
-                                "<tr><td><i class=\"bi bi-at dashboard-icon-padding\"></i>" . "Full Name: " . "</td>" . "<td>" . $row["firstname"]. " "  . $row["lastname"] 
-                                . "</td></tr>" .       
                                 //Username
                                 "<tr><td><i class=\"bi bi-at dashboard-icon-padding\"></i>" . "User Name: " .  "</td>" . "<td>" . $row["username"] . "</td></tr>" . 
                                 //Email
                                 "<tr><td><i class=\"bi bi-envelope dashboard-icon-padding\"></i>" . "Email: " .  "</td>" . "<td>" . $row["email"] . "</td></tr>" . 
                                 //Member since
                                 "<tr><td><i class=\"bi bi-calendar-check dashboard-icon-padding\"></i>" . "Member since: " .  "</td>" . "<td>" . $row["date"] . "</td></tr>" .
-                                //Last login
-                                "<tr><td><i class=\"bi bi-calendar-check dashboard-icon-padding\"></i>" . "Last Login: " .  "</td>" . "<td>" . $row["lastlogin"] . "</td></tr>" ; 
+                                //Last Update
+                                "<tr><td><i class=\"bi bi-calendar-check dashboard-icon-padding\"></i>" . "Last Updated: " .  "</td>" . "<td>" . $row["lastlogin"] . "</td></tr>" ; 
 
                             //Output data from API
 

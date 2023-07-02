@@ -1,6 +1,5 @@
 //Declare constants and variables
 
-let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
 let countryText = document.getElementById("country");
 let longText = document.getElementById("longitude");
@@ -22,10 +21,8 @@ window.onload = getData();
 
 async function getData() {
 
-    const dataURL = "https://ipapi.co/json/"
+    const dataURL = "https://ipapi.co/json/";
     
-
-
 
     try {
         const response2 = await fetch(dataURL, {cache: "no-cache"});
@@ -42,17 +39,18 @@ async function getData() {
             let theLongitude = result["longitude"];
             let theLatitude = result["latitude"];
             
-            
             outputTimeZone(theTimeZone);
             outputCountry(theCountry);
             
             getWeatherData(theLatitude,theLongitude);
             getCurrencyData(theIpAddress);
+            hideSpinner();
         }
 
     } catch (error) {
         if (error) throw error;
         console.log("Time/date/location error: ", error);
+        showSpinner();
     
     }
 }
@@ -86,11 +84,13 @@ async function getWeatherData(lat,long) {
             outPutWeatherConditions(condtionDescription);
             outputWeatherIcon(theWeatherIcon);
             outputCity(theCity);
+            hideSpinner();
         }
 
     } catch (error) {
         if (error) throw error;
         console.log("Weather API error: ", error);
+        showSpinner();
     
     }
 }
@@ -115,12 +115,14 @@ async function getCurrencyData(ipAdressInput) {
             let tempCurrency = currencyResult.currency;
             let exchangeRate = getExchangeRate(tempCurrency);
             console.log("Exchange Rate is: " + exchangeRate);
+            hideSpinner();
             
         }
 
     } catch (error) {
         if (error) throw error;
         console.log("Currency API error: ", error);
+        showSpinner();
     
     }
 }
@@ -146,12 +148,14 @@ async function getExchangeRate(currencyInput) {
             let finalResult = exchangeValue + " " + currencyResult.query.from;
 
             outputExchangeRate(finalResult);
+            hideSpinner();
             
         }
 
     } catch (error) {
         if (error) throw error;
         console.log("Exchange API error: ", error);
+        showSpinner();
     
     }
 }
@@ -227,4 +231,22 @@ async function getExchangeRate(currencyInput) {
     function outputExchangeRate(currencyInput) {
 
         exchangeRateText.innerHTML = currencyInput;
+    }
+
+    /**
+     * Hide the spinner
+     */
+
+    function hideSpinner() {
+        document.getElementById('spinner')
+                .style.display = 'none';
+    } 
+
+    /**
+     * Show the spinner
+     */
+
+    function loadSpinner() {
+        document.getElementById('spinner')
+                .style.display = '';
     }

@@ -69,9 +69,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             //add the current datetime to lastlogin
 
                             // time zone is hard coded to PST
-                            // date_default_timezone_set("America/Vancouver");
+                            date_default_timezone_set("America/Vancouver");
                             $param_lastupdate = date('y-m-d h:i:s');
-                            // echo $param_lastupdate;
+                            
 
                             $sql = "UPDATE loginusers SET lastlogin = ? WHERE id = ?";
                             
@@ -160,8 +160,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             </div>
             <div class="col text-center">
               <div class="d-grid gap-1 p-1">
-                  <input type="submit" class="btn btn-primary form-margin-top" value="Login">
-                  <a href="register.php" class="btn btn-warning form-margin-top mb-1">Register</a>
+                  <input type="submit" class="btn btn-primary form-margin-top mb-1" value="Login">
+                  <a href="register.php" class="text-center btn btn-warning">Register</a>
               </div>
             </div>
     
@@ -172,7 +172,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                   class="signup-icon" /></a>
                 <a href="#"><img src="images/facebook.png"
                   class="signup-icon" /></a>
-                  <a href="home.php"><img src="images/google.png"
+                  <a href="#"><img src="images/google.png"
                   class="signup-icon" /></a>
                 
             </div>
@@ -184,7 +184,5 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         </div>
     </div>
-    <script src="js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</body>
-</html>
+
+<?php require 'template-parts/footer.php'; ?>

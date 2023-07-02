@@ -75,7 +75,7 @@ $result = mysqli_query($conn, $sql);
                             //Current temperature based on IP
                             echo '<tr><td><i class="bi bi-thermometer-half dashboard-icon-padding"></i><span class="card-text">Temperature </td><td><span class="" id="weather"></span></span></tr></td>';
                             //Currency Exchange Rate (1 USD to your location)
-                            echo '<tr><td><i class="bi bi-currency-dollar dashboard-icon-padding"></i><span class="card-text">Exchange Rate</td><td><span class="" id="exchangeRate"></span></tr></td></table>';
+                            echo '<tr><td><i class="bi bi-currency-dollar dashboard-icon-padding"></i><span class="card-text">Exchange Rate from USD</td><td><span class="" id="exchangeRate"></span></tr></td></table>';
 
 
                             echo '<div class="col text-center">
@@ -83,7 +83,7 @@ $result = mysqli_query($conn, $sql);
 
                             echo '<a href="edit-profile.php?id='. $row['id'] .'" class="btn btn-primary form-margin-top">Edit</a>';   
                             
-                            echo '<a href="logout.php" class="btn btn-warning form-margin-top mb-1">Logout</a>
+                            echo '<a href="logout.php" class="text-center btn btn-warning">Logout</a>
                             </div>
                             </div>
                             ';
@@ -98,9 +98,8 @@ $result = mysqli_query($conn, $sql);
         </form>
         </div>    
     </div>
+    
     <script src="js/scripts.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-</body>
-</html>
-
+    
+<?php require 'template-parts/footer.php'; ?>
 <?php mysqli_close($conn); ?>

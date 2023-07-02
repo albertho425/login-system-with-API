@@ -1,12 +1,5 @@
 //Declare constants and variables
 
-weatherAPIKey = "b2ab7ba8839f62d072e8fb6510491325";
-// clockAPIKey = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
-clockAPIKey = "DaSuash1fkGkipLCCIvIzSulDjDPXNF1CNyh1anC";
-const key1  = "4uiCjGnH2nha1lOycCS2LRRjYirxKLUU7JoYcGt6";
-const key2 = "CCFMH7s4SxEi70LHvuK6TqEeX5Sf75coHdYMFfA";
-currencyAPIKey = "6UGvcEOcu5uJ5WMCL0v0kBLyCRFyu5jP";
-
 let ipAddressText = document.getElementById("ipaddress");
 let timeZoneText = document.getElementById("timezone");
 let countryText = document.getElementById("country");
@@ -29,32 +22,29 @@ window.onload = getData();
 
 async function getData() {
 
-    const dateUrl = "https://api.ipbase.com/v2/info?apikey=" + clockAPIKey;
-    // var oReq = new XMLHttpRequest();
-    // oReq.addEventListener("load", function () { console.log(this.responseText); });
-    // oReq.open("GET", "https://api.ipbase.com/v2/info?ip=1.1.1.1&apikey=" + clockAPIKey);
-    // oReq.send();
+    const dataURL = "https://ipapi.co/json/"
+    
+
+
 
     try {
-        const response2 = await fetch(dateUrl, {cache: "no-cache"});
+        const response2 = await fetch(dataURL, {cache: "no-cache"});
         const result = await response2.json();
     
         if (response2.ok) {
             console.log("the API result is: " , result);
 
-            let theIpAddress = result["data"].ip;
-            let theTimeZone = result["data"].timezone.code;
-            // let theLocation = result["data"].timezone.id;
-            let theCountry = result["data"].location.country.emoji;
-            let theDateTime = result["data"].timezone.current_time;
-            let theLongitude = result["data"].location.longitude;
-            let theLatitude = result["data"].location.latitude;
+            let theIpAddress = result["ip"];
+            console.log (theIpAddress);
+            let theTimeZone = result["timezone"];
+            console.log(theTimeZone);
+            let theCountry = result["country_code"];
+            let theLongitude = result["longitude"];
+            let theLatitude = result["latitude"];
             
-            outputIpAddress(theIpAddress);
+            
             outputTimeZone(theTimeZone);
             outputCountry(theCountry);
-            // let theCurrency = getCurrency(theIpAddress);
-            // console.log("the returned value of currency is: " + theCurrency);
             
             getWeatherData(theLatitude,theLongitude);
             getCurrencyData(theIpAddress);
@@ -172,11 +162,6 @@ async function getExchangeRate(currencyInput) {
 // Functions for output or logic
 
     
-    //Output the IP address
-    function outputIpAddress(ip)
-    {
-        ipAddressText.innerHTML = ip;
-    }
     //Output the time zone
     function outputTimeZone(timeZoneInput)
     {
